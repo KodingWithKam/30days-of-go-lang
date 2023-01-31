@@ -14,5 +14,6 @@ import (
 )
 
 func main() {
+	// Simply prints out Hello World when program is run
 	fmt.Println("Hello World!")
 }
