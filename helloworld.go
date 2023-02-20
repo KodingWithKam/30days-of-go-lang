@@ -22,9 +22,20 @@ func main() {
 		* Constant names are usually written in uppercase letters (for easy identification and differentiation from variables)
 		* Constants can be declared both inside and outside of a function
 	*/
-	const BIRTH_YEAR = 1995
-	const CURRENT_YEAR = 2023
+
+	// untyped constant
+	const BirthYear = 1995
+
+	// typed constant
+	const CurrentYear int = 2023
+
+	// Multiple constants declaration
+	const (
+		A int = 5
+		B     = 21
+		C     = "Hi!"
+	)
 
 	// Simply prints out contents when run
-	fmt.Println("Constants", BIRTH_YEAR, CURRENT_YEAR)
+	fmt.Println("Constants", BirthYear, CurrentYear, A, B, C)
 }
