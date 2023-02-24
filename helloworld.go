@@ -24,10 +24,10 @@ func main() {
 	*/
 
 	// untyped constant
-	const BirthYear = 1995
+	const birthYear = 1995
 
 	// typed constant
-	const CurrentYear int = 2023
+	const currentYear int = 2023
 
 	// Multiple constants declaration
 	const (
@@ -37,5 +37,5 @@ func main() {
 	)
 
 	// Simply prints out contents when run
-	fmt.Println("Constants", BirthYear, CurrentYear, A, B, C)
+	fmt.Println("Constants", birthYear, currentYear, A, B, C)
 }
