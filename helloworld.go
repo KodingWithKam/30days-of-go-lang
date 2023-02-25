@@ -21,6 +21,7 @@ In Go, there are different types of variables:
 3. string - stores text, such as "Hello World". String values are surrounded by double quotes
 4. bool- stores values with two states: true or false
 */
+
 func main() {
 	/*
 		DECLARING VARIABLES IN GO..
@@ -63,11 +64,41 @@ func main() {
 
 	*/
 
+	var isBoolean bool = true
+	var isFalse bool = false
+
+	// Naming Techniques 4 Variables
+	var is_snake_case = true // <-- ✅EVERY WORD SEPARATED WITH UNDERSCORE
+
+	var IsPascalCase = true // <-- ✅EVERY WORD BEGINS WITH CAPITAL LETTER
+
+	var isCamelCase = true // <-- ✅EVERY WORD EXCEPT 1st BEGINS WITH CAPITAL LETTER
+
+	// Naming Conventions
+	var _startsWithUnderScore = true      // <-- ✅THIS IS OK!
+	var startsWithLetter string           // <-- ✅THIS IS OK!
+	var superDuperLongVariableName string // <-- ✅THIS IS OK!
+	var b = "B"                           // <-- ✅THIS IS OK! (CASE SENSITIVE)
+	var B = "B"                           // <-- ✅THIS IS OK! (CASE SENSITIVE)
+	// var 1startsWithNumber = 1 // <-- ❌THIS IS NOT OK!
+	// var var = 1 // <-- ❌THIS IS NOT OK!
+	// var name with spaces = "long" // <-- ❌THIS IS NOT OK!
+
+	// var vs :=
+	var newName string                       // <-- we can add a value later!
+	newName = "Declared After variable init" // <-- adding value here!
+
+	y := 10 // <-- We NEED TO SET THE VALUE IN THE SAME LINE!
+
 	// Example 1 with var keyword
+	var a = 25
 	var firstName string = "Kam"
+	var lastName string = "Haze"
+	var middleName string
 
 	// Example 2 with := symbol (notice how var keyword is omitted)
 	x := 2
+	test := "HELLO"
 
 	// You can also declare variables without setting the value if it's not know
 	var c bool
@@ -80,12 +111,17 @@ func main() {
 
 	// Print out above examples
 	fmt.Println(firstName)
-	fmt.Println(x)
+	fmt.Println(x, y, a)
 	fmt.Println(c)
 	fmt.Println(first)
 	fmt.Println(second)
 	fmt.Println(third)
 	fmt.Println(fourth)
+	fmt.Println(lastName)
+	fmt.Println(middleName, test, newName, startsWithLetter, _startsWithUnderScore,
+		superDuperLongVariableName, b, B, isCamelCase, IsPascalCase, is_snake_case,
+		isBoolean, isFalse,
+	)
 
 	// Simply prints out Hello World when program is run
 	fmt.Println("Hello World!")
