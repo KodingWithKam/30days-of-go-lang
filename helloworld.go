@@ -68,4 +68,53 @@ func main() {
 	fmt.Printf("slice5 = %v\n", slice5)        // 👈🏾will print slice5 = [0 0 0 0 0] ✅
 	fmt.Printf("length = %d\n", len(slice5))   // 👈🏾will print length = 5 ✅
 	fmt.Printf("capacity = %d\n", cap(slice5)) // 👈🏾will print capacity = 5 ✅
+
+	/*
+		MODIFYING/ACCESSING SLICE ELEMENTS 🥶
+	*/
+
+	// Example 5 modify value in slice
+	slice6 := []int{1, 2, 3, 4}                   // declare a slice
+	slice6[3] = 20                                // update value at position 3
+	fmt.Printf("Updated value = %v\n", slice6[3]) // 👈🏾will print = Updated value = 20 ✅
+
+	//Example 6 append elements to end of slice using 👉🏾 append()
+	slice7 := []string{"Hello", "I", "Am"}                     // declare a slice of string type with length 3 and capacity 3
+	fmt.Printf("MY string slice = %s\n", slice7)               // 👈🏾will print MY string slice = [Hello I Am] ✅
+	fmt.Printf("My string slice length = %d\n", len(slice7))   // 👈🏾My string slice length = 3 ✅
+	fmt.Printf("My string slice capacity = %d\n", cap(slice7)) // 👈🏾My string slice capacity = 3 ✅
+
+	slice7 = append(slice7, "A", "Slice")
+	fmt.Printf("MY string slice = %s\n", slice7) // 👈🏾will print MY string slice = [Hello I Am A Slice] ✅
+
+	// Example 7 append one slice to another
+	slice8 := []int{1, 2, 3}
+	slice9 := []int{4, 5, 6}
+	slice10 := append(slice8, slice9...) // 🚨The '...' after slice9 is necessary when appending the elements of one slice to another.
+	fmt.Printf("slice10=%v\n", slice10)
+
+	/*
+			COPY FUNCTION FOR SLICES
+		When using slices, Go loads all the underlying elements into the memory.
+
+		If the array is large and you need only a few elements, it is better to copy
+		those elements using the copy() function.✅
+
+		The copy() function creates a new underlying array with only the required elements for the slice.
+		This will reduce the memory used for the program.😎
+	*/
+	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+	// Original slice
+	fmt.Printf("numbers = %v\n", numbers)
+	fmt.Printf("length = %d\n", len(numbers))
+	fmt.Printf("capacity = %d\n", cap(numbers))
+
+	// Create copy with only needed numbers
+	neededNumbers := numbers[:len(numbers)-10] // Length of numbers slice - 10 = 5 ✅
+	numbersCopy := make([]int, len(neededNumbers))
+	copy(numbersCopy, neededNumbers)
+
+	fmt.Printf("numbersCopy = %v\n", numbersCopy)
+	fmt.Printf("length = %d\n", len(numbersCopy))
+	fmt.Printf("capacity = %d\n", cap(numbersCopy))
 }
